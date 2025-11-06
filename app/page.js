@@ -1,9 +1,9 @@
 import Testimonials from "@/components/AboutUs/Testimonials";
-import WhatWeDo from "@/components/AboutUs/WhatWeDo";
+// import WhatWeDo from "@/components/AboutUs/WhatWeDo";
 import BusinessJourney from "@/components/Home/BusinessJourney";
-import ContactSection from "@/components/Home/ContactSection";
+// import ContactSection from "@/components/Home/ContactSection";
 import TeamSection from "@/components/Home/TeamSection";
-import CustomHeroSection from "@/utils/CustomHeroSection";
+// import CustomHeroSection from "@/utils/CustomHeroSection";
 import Homepage from "@/components/Home/Homepage";
 import Homepage2 from "@/components/Home/Homepage2";
 import ChurchTimings from "@/components/ChurchTimings";

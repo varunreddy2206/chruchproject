@@ -1,9 +1,9 @@
-import Testimonials from "@/components/AboutUs/Testimonials";
-import WhatWeDo from "@/components/AboutUs/WhatWeDo";
-import BusinessJourney from "@/components/Home/BusinessJourney";
-import ContactSection from "@/components/Home/ContactSection";
-import TeamSection from "@/components/Home/TeamSection";
-import CustomHeroSection from "@/utils/CustomHeroSection";
+// import Testimonials from "@/components/AboutUs/Testimonials";
+// import WhatWeDo from "@/components/AboutUs/WhatWeDo";
+// import BusinessJourney from "@/components/Home/BusinessJourney";
+// import ContactSection from "@/components/Home/ContactSection";
+// import TeamSection from "@/components/Home/TeamSection";
+// import CustomHeroSection from "@/utils/CustomHeroSection";
 import AboutPage from "@/components/AboutUs/AboutUs";
 import ApproachSection from "@/components/AboutUs/ApproachSection";
 import TimelineSection from "@/components/AboutUs/TimelineSection";

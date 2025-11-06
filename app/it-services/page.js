@@ -1,4 +1,4 @@
-import FaqSection from "@/components/BusinessConsulting/FaqSection";
+// import FaqSection from "@/components/BusinessConsulting/FaqSection";
 import ItServiceCom from "@/components/ItServices/ItServiceCom";
 import CustomHeroSection from "@/utils/CustomHeroSection";
 import ServiceHeadSection from "@/utils/SeviceHeadSection";
@@ -29,7 +29,7 @@ export default function page() {
 
 <ItServiceCom/>
       {/* 🔹 FAQ Section */}
-      <FaqSection />
+      {/* <FaqSection /> */}
     </div>
   );
 }

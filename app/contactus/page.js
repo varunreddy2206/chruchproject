@@ -1,5 +1,5 @@
-import Contact from "@/components/ContactUs/Contact";
-import ContactSection from "@/components/Home/ContactSection";
+// import Contact from "@/components/ContactUs/Contact";
+// import ContactSection from "@/components/Home/ContactSection";
 import CustomHeroSection from "@/utils/CustomHeroSection";
 import React from "react";
 

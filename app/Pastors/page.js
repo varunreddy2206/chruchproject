@@ -1,7 +1,7 @@
 import ContactSection from "@/components/Home/ContactSection";
-import FaqSection from "@/components/Home/FaqSection";
+// import FaqSection from "@/components/Home/FaqSection";
 import Pastors  from "@/components/Pastors";
-import CustomHeroSection from "@/utils/CustomHeroSection";
+// import CustomHeroSection from "@/utils/CustomHeroSection";
 import Ourpastors from "@/components/Ourpastors";
 import React from "react";
 

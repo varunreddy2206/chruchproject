@@ -1,7 +1,7 @@
-import ContactSection from "@/components/Home/ContactSection";
-import FaqSection from "@/components/Home/FaqSection";
-import ServicesFinal from "@/components/Events/ServicesFinal";
-import CustomHeroSection from "@/utils/CustomHeroSection";
+// import ContactSection from "@/components/Home/ContactSection";
+// import FaqSection from "@/components/Home/FaqSection";
+// import ServicesFinal from "@/components/Events/ServicesFinal";
+// import CustomHeroSection from "@/utils/CustomHeroSection";
 import EventsList from "@/components/Events/Events";
 import Ourevents from "@/components/Events/Ourevents";
 import React from "react";

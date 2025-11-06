@@ -1,5 +1,5 @@
 import AppDevelopmentCom from "@/components/AppDevelopmentCom";
-import FaqSection from "@/components/BusinessConsulting/FaqSection";
+// import FaqSection from "@/components/BusinessConsulting/FaqSection";
 import CustomHeroSection from "@/utils/CustomHeroSection";
 import ServiceHeadSection from "@/utils/SeviceHeadSection";
 import React from "react";
@@ -28,7 +28,7 @@ export default function page() {
       />
       <AppDevelopmentCom />
       {/* 🔹 FAQ Section */}
-      <FaqSection />
+      {/* <FaqSection /> */}
     </div>
   );
 }

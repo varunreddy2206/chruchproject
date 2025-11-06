@@ -1,6 +1,6 @@
 import GalleryList from "@/components/GalleryList";
 import ContactSection from "@/components/Home/ContactSection";
-import CustomHeroSection from "@/utils/CustomHeroSection";
+// import CustomHeroSection from "@/utils/CustomHeroSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import VisitUsSection from "@/components/VisitUsSection";
 import Ourgallery from "@/components/Ourgallery";
