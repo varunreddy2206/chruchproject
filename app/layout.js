@@ -2,7 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import TopHeader from "@/components/TopHeader";
+// import TopHeader from "@/components/TopHeader";
+import TopBar from "@/components/TopBar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#0A2222]`}
       >
         {/* <TopHeader /> */}
+        <TopBar/>
         <Header />
         <main className="pt-[50px]">{/* Add top padding to avoid overlap */}
           {children}
