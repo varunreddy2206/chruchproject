@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // professional icons
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function Homepage() {
   const [startIndex, setStartIndex] = useState(0);
@@ -28,7 +28,6 @@ export default function Homepage() {
     );
   };
 
-  // 🔹 Ensure 4 members are always visible — wraps around
   const visibleMembers = Array.from({ length: membersToShow }).map(
     (_, i) => pccMembers[(startIndex + i) % pccMembers.length]
   );
@@ -48,77 +47,96 @@ export default function Homepage() {
       </div>
 
       {/* === RIGHT SIDE === */}
-      <div className="relative flex flex-col items-center md:items-end justify-start bg-white text-center py-20 md:py-24 px-6 md:px-10 mt-10 md:mt-16">
-        {/* Pastor Image + Name */}
-        <div className="absolute top-10 right-10 flex flex-col items-center">
-          <div className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 hover:scale-105 transition-transform duration-500">
-            <Image
-              src="/images/heroimg2.png"
-              alt="Pastor Image"
-              fill
-              className="object-contain rounded-lg shadow-md"
-            />
+      <div className="relative flex flex-col items-center justify-start bg-white text-center py-16 md:py-20 px-4 sm:px-6 md:px-10 mt-10 md:mt-16">
+        {/* === Verse + Pastor Section === */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-20">
+          {/* Verse */}
+          <div className="text-[#F74F22] text-center lg:text-left max-w-md">
+            <p className="text-2xl sm:text-3xl md:text-5xl italic font-semibold leading-snug drop-shadow-sm">
+              “Lovethy neighbour <br /> As <br /> Thyself”
+            </p>
           </div>
-          <h3 className="bg-[#022147] text-white px-6 py-2 rounded-md font-semibold text-lg md:text-xl shadow-md mt-2">
-            Pastor Anil
-          </h3>
-        </div>
 
-        {/* Cross Icon */}
-        <div className="absolute top-[110px] right-[330px] md:right-[390px] z-30">
-          <div className="relative w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 transition-all duration-500 ease-out hover:scale-110 brightness-110 shadow-[0_0_40px_rgba(247,79,34,0.9)] rounded-full mt-[-38px]">
-            <Image
-              src="/images/cross.png"
-              alt="Cross Icon"
-              fill
-              className="object-contain animate-pulse"
-            />
-          </div>
-        </div>
+          {/* Pastor */}
+          <div className="flex flex-col items-center justify-center mt-6 lg:mt-0">
+            <div className="relative w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 hover:scale-105 transition-transform duration-500">
+              <Image
+                src="/images/heroimg2.png"
+                alt="Pastor Image"
+                fill
+                className="object-contain rounded-lg shadow-md"
+              />
+            </div>
+            <h3 className="bg-[#022147] text-white px-5 py-2 rounded-md font-semibold text-base sm:text-lg md:text-xl shadow-md mt-2">
+              Pastor Anil
+            </h3>
 
-        {/* Verse Box */}
-        <div className="absolute top-[180px] right-[210px] md:right-[250px] bg-[#ffffff]/90 text-[#F74F22] text-left px-8 py-8 rounded-lg shadow-lg max-w-md z-10">
-          <p className="text-3xl md:text-4xl italic font-semibold leading-snug">
-            “Lovethy neighbour <br /> As <br /> Thyself”
-          </p>
-        </div>
-
-        {/* PCC Members Carousel */}
-        <div className="flex items-center justify-center mt-auto pt-[350px] space-x-3 sm:space-x-6">
-          {/* Left Arrow */}
-          <button
-            onClick={prevMembers}
-            className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#022147] text-[#022147] hover:bg-[#F74F22] hover:text-white hover:border-[#F74F22] transition-all duration-300 shadow-sm"
-          >
-            <ChevronLeft size={20} />
-          </button>
-
-          {/* Members */}
-          <div className="flex space-x-3 sm:space-x-5">
-            {visibleMembers.map((member) => (
-              <div key={member.id} className="flex flex-col items-center">
-                <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full border-4 border-[#F74F22] overflow-hidden shadow-md hover:scale-105 transition-transform duration-300">
-                  <Image
-                    src={member.src}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <p className="mt-2 text-[#022147] font-semibold text-sm sm:text-base">
-                  {member.name}
-                </p>
+            {/* Cross Icon */}
+            <div className="mt-4 flex items-center justify-center">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full shadow-[0_0_25px_rgba(247,79,34,0.8)] flex items-center justify-center">
+                <Image
+                  src="/images/cross.png"
+                  alt="Cross Icon"
+                  fill
+                  className="object-contain animate-pulse"
+                />
               </div>
-            ))}
+            </div>
           </div>
+        </div>
 
-          {/* Right Arrow */}
-          <button
-            onClick={nextMembers}
-            className="flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[#022147] text-[#022147] hover:bg-[#F74F22] hover:text-white hover:border-[#F74F22] transition-all duration-300 shadow-sm"
-          >
-            <ChevronRight size={20} />
-          </button>
+        {/* === PCC MEMBERS TITLE === */}
+        <h2 className="text-[#022147] font-bold text-xl sm:text-2xl md:text-3xl mt-10 mb-4 text-center">
+          Our PCC Members
+        </h2>
+
+        {/* === PCC Members Carousel === */}
+        <div className="flex flex-col items-center justify-center space-y-4 sm:space-y-6 transition-all duration-500">
+          <div className="flex items-center justify-center space-x-2 sm:space-x-3 md:space-x-4">
+            {/* Left Arrow */}
+            <button
+              onClick={prevMembers}
+              className="tablet-arrow-size flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full border border-[#022147] text-[#022147] hover:bg-[#F74F22] hover:text-white hover:border-[#F74F22] transition-all duration-300 shadow-sm md:translate-x-4"
+            >
+              <ChevronLeft size={16} />
+            </button>
+
+            {/* Members */}
+            <div className="flex space-x-2 sm:space-x-3 md:space-x-4 justify-center tablet-space-fix">
+              {visibleMembers.map((member) => (
+                <div key={member.id} className="flex flex-col items-center">
+                  <div
+                    className="relative 
+        w-12 h-12 
+        sm:w-14 sm:h-14 
+        md:w-[4.2rem] md:h-[4.2rem]
+        tablet-pcc-size
+        rounded-full border-4 border-[#F74F22] overflow-hidden shadow-md 
+        hover:scale-105 transition-transform duration-300"
+                  >
+                    <Image
+                      src={member.src}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <p className="tablet-member-text mt-2 text-[#022147] font-semibold text-xs sm:text-sm md:text-base">
+                    {member.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+
+            {/* Right Arrow */}
+            <button
+              onClick={nextMembers}
+              className="tablet-arrow-size flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full border border-[#022147] text-[#022147] hover:bg-[#F74F22] hover:text-white hover:border-[#F74F22] transition-all duration-300 shadow-sm md:-translate-x-4"
+            >
+              <ChevronRight size={16} />
+            </button>
+          </div>
         </div>
       </div>
     </section>

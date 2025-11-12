@@ -3,39 +3,55 @@
 import { useState } from "react";
 
 export default function MembersPage() {
-  const members = [
-    { id: 1, name: "John", ward: "Ward 1" },
-    { id: 2, name: "Mary", ward: "Ward 2" },
-    { id: 3, name: "David", ward: "Ward 5" },
-    { id: 4, name: "Grace", ward: "Ward 3" },
-    { id: 5, name: "Paul", ward: "Ward 5" },
-    { id: 6, name: "Peter", ward: "Ward 7" },
-    { id: 7, name: "Susan", ward: "Ward 4" },
+  // Generate 200 realistic names
+  const names = [
+    "John", "Mary", "David", "Grace", "Paul", "Peter", "Susan", "James", "Emily", "Michael",
+    "Sarah", "Daniel", "Rachel", "Andrew", "Sophia", "Mark", "Emma", "Joseph", "Olivia", "Samuel",
+    "Hannah", "Joshua", "Lily", "Benjamin", "Ava", "Ethan", "Mia", "Jacob", "Ella", "Lucas",
+    "Chloe", "Matthew", "Isabella", "Noah", "Amelia", "Nathan", "Charlotte", "Elijah", "Abigail",
+    "Caleb", "Grace", "Logan", "Sophie", "Henry", "Victoria", "Leo", "Scarlett", "Owen", "Layla",
+    "Isaac", "Zoe", "Eli", "Aria", "Adam", "Nora", "Jack", "Lillian", "Ryan", "Harper",
+    "Evan", "Ellie", "Jonathan", "Bella", "Aaron", "Madison", "Charles", "Avery", "Mason", "Evelyn",
+    "Liam", "Luna", "Gabriel", "Riley", "Oliver", "Leah", "Jayden", "Hazel", "Carter", "Penelope",
+    "Wyatt", "Camila", "Hunter", "Stella", "Dylan", "Violet", "Isaiah", "Aurora", "Luke", "Paisley",
+    "Anthony", "Hannah", "Jason", "Savannah", "Alexander", "Addison", "Thomas", "Skylar", "Sebastian", "Nova",
+    "Christian", "Lucy", "Dominic", "Aubrey", "Austin", "Elena", "Brandon", "Anna", "Adrian", "Sadie",
+    "Jordan", "Eva", "Tyler", "Clara", "Nathaniel", "Alice", "Cole", "Ruby", "Blake", "Willow",
+    "Eric", "Naomi", "Xavier", "Lydia", "Justin", "Caroline", "Levi", "Peyton", "Gavin", "Eleanor",
+    "Connor", "Hailey", "Julian", "Samantha", "Cameron", "Aaliyah", "Zachary", "Maya", "Ian", "Kennedy",
+    "Miles", "Genesis", "Elias", "Faith", "Vincent", "Alexis", "Asher", "Neha", "Nikhil", "Arjun",
+    "Priya", "Ananya", "Aarav", "Riya", "Krishna", "Diya", "Ishaan", "Meera", "Rohan", "Sneha",
+    "Aditya", "Kavya", "Sai", "Anjali", "Manish", "Pooja", "Raj", "Divya", "Vikram", "Neel",
+    "Kiran", "Isha", "Tarun", "Preeti", "Aravind", "Swathi", "Naveen", "Lakshmi", "Akash", "Rachana",
+    "Tejas", "Bhavya", "Vikas", "Keerthi", "Harsha", "Chaitra", "Rohit", "Varsha", "Santosh", "Sindhu",
+    "Karthik", "Deepa", "Venu", "Mounika", "Suraj", "Aarthi", "Rajesh", "Tulasi", "Mahesh", "Lohita"
   ];
+
+  // Shuffle names randomly
+  const shuffledNames = [...names].sort(() => Math.random() - 0.5);
+
+  // Create 200 members and assign random ward (1–7)
+  const members = Array.from({ length: 200 }, (_, i) => ({
+    id: i + 1,
+    name: shuffledNames[i % shuffledNames.length],
+    ward: (Math.floor(Math.random() * 7) + 1).toString(), // just number (1-7)
+  }));
 
   const [selectedWard, setSelectedWard] = useState("All");
 
+  // Filter logic
   const filteredMembers =
     selectedWard === "All"
       ? members
       : members.filter((m) => m.ward === selectedWard);
 
-  const wards = [
-    "All",
-    "Ward 1",
-    "Ward 2",
-    "Ward 3",
-    "Ward 4",
-    "Ward 5",
-    "Ward 6",
-    "Ward 7",
-  ];
+  const wards = ["All", "1", "2", "3", "4", "5", "6", "7"];
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white to-[#f9f9f9] flex flex-col items-center py-10 px-4">
       {/* Title */}
       <h1 className="text-4xl md:text-5xl font-extrabold text-[#022147] mb-8 text-center tracking-wide">
-         Members
+        Members
       </h1>
 
       {/* Table Container */}
@@ -45,9 +61,7 @@ export default function MembersPage() {
           <thead className="bg-[#022147] text-white text-sm md:text-base uppercase tracking-wide">
             <tr>
               <th className="border border-gray-300 px-4 py-4 w-[80px]">S.No</th>
-              <th className="border border-gray-300 px-4 py-4">
-                Name of Members
-              </th>
+              <th className="border border-gray-300 px-4 py-4">Name of Members</th>
               <th className="border border-gray-300 px-4 py-4 relative">
                 <div className="flex items-center justify-center space-x-2">
                   <span>Ward No</span>
@@ -92,7 +106,7 @@ export default function MembersPage() {
                   colSpan="3"
                   className="py-8 text-gray-500 italic text-lg border border-gray-300"
                 >
-                  No members found for {selectedWard}
+                  No members found for Ward {selectedWard}
                 </td>
               </tr>
             )}
@@ -100,7 +114,7 @@ export default function MembersPage() {
         </table>
       </div>
 
-      {/* Subtle Animation Effect on Mount */}
+      {/* Subtle Animation */}
       <style jsx>{`
         table {
           animation: fadeInUp 0.8s ease-in-out;

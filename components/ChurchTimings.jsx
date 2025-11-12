@@ -41,18 +41,7 @@ export default function ChurchTimings() {
         Sunday: "-",
       },
     },
-    {
-      activity: "Food Donation",
-      timings: {
-        Monday: "-",
-        Tuesday: "-",
-        Wednesday: "12:00pm - 1:00pm",
-        Thursday: "-",
-        Friday: "-",
-        Saturday: "1:00pm - 2:00pm",
-        Sunday: "12:00pm - 2:00pm",
-      },
-    },
+    // ✅ Removed Food Donation
   ];
 
   const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
